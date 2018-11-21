@@ -1,0 +1,359 @@
+﻿<common:LayoutAwarePage
+    x:Name="pageRoot"
+    x:Class="BoardGamingAssistant.MagicTheGatheringPage"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BoardGamingAssistant"
+    xmlns:common="using:BoardGamingAssistant.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+
+        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
+    </Page.Resources>
+    <common:LayoutAwarePage.TopAppBar>
+        <AppBar>
+            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0"/>
+        </AppBar>
+    </common:LayoutAwarePage.TopAppBar>
+
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+    <Grid Style="{StaticResource LayoutRootStyle}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="343"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="343"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Back button and page title -->
+        <Grid x:Name="PlayerOneGrid" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+            <Border BorderThickness="0,2" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="-257,0,-223,0" UseLayoutRounding="False" d:LayoutRounding="Auto" BorderBrush="#FF8B8B8B">
+                <Border.RenderTransform>
+                    <CompositeTransform Rotation="90"/>
+                </Border.RenderTransform>
+                <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="Assets/mtg_sideOne.jpg" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Opacity="0.45" Height="432"/>
+            </Border>
+            <GridView x:Name="playerOneLifeWheel" RenderTransformOrigin="0.5,0.5" Height="138" SelectionMode="None" IsSwipeEnabled="False" IsTabStop="True" UseLayoutRounding="False" d:LayoutRounding="Auto" BorderThickness="2" CharacterSpacing="10" BorderBrush="#FF9B9B9B" Width="128" HorizontalAlignment="Center" VerticalAlignment="Center" Loaded="LifeCounter_Loaded">
+                <GridView.RenderTransform>
+                    <CompositeTransform Rotation="90"/>
+                </GridView.RenderTransform>
+                <GridViewItem Content="0" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="1" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="2" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="3" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="4" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="5" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="6" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="7" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="8" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="9" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="10" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="11" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="12" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="13" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="14" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="15" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="16" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="17" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="18" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="19" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="20" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="21" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="22" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="23" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="24" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="25" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="26" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="27" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="28" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="29" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="30" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="31" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="32" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="33" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="34" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="35" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="36" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="37" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="38" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="39" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="40" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="41" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="42" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="43" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="44" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="45" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="46" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="47" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="48" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="49" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="50" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="51" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="52" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="53" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="54" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="55" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="56" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="57" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="58" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="59" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="60" FontSize="100" Height="134" Width="116"/>
+            </GridView>
+        </Grid>
+        <Grid x:Name="PlayerTwoGrid" Grid.Column="2" Grid.RowSpan="2">
+            <Border BorderThickness="0,2" HorizontalAlignment="Right" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" BorderBrush="#FF8B8B8B" Margin="-223,0,-257,0">
+                <Border.RenderTransform>
+                    <CompositeTransform Rotation="-90"/>
+                </Border.RenderTransform>
+                <Image HorizontalAlignment="Right" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Source="Assets/mtg_sideTwo.jpg" Height="432" UseLayoutRounding="False" d:LayoutRounding="Auto" Opacity="0.45"/>
+            </Border>
+            <GridView x:Name="playerTwoLifeWheel" RenderTransformOrigin="0.5,0.5" Height="138" SelectionMode="None" IsSwipeEnabled="False" IsTabStop="True" UseLayoutRounding="False" d:LayoutRounding="Auto" BorderThickness="2" CharacterSpacing="10" BorderBrush="#FF9B9B9B" Width="128" HorizontalAlignment="Center" VerticalAlignment="Center" Loaded="LifeCounter_Loaded">
+                <GridView.RenderTransform>
+                    <CompositeTransform Rotation="-90"/>
+                </GridView.RenderTransform>
+                <GridViewItem Content="0" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="1" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="2" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="3" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="4" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="5" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="6" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="7" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="8" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="9" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="10" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="11" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="12" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="13" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="14" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="15" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="16" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="17" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="18" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="19" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="20" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="21" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="22" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="23" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="24" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="25" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="26" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="27" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="28" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="29" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="30" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="31" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="32" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="33" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="34" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="35" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="36" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="37" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="38" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="39" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="40" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="41" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="42" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="43" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="44" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="45" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="46" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="47" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="48" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="49" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="50" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="51" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="52" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="53" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="54" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="55" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="56" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="57" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="58" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="59" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="60" FontSize="100" Height="134" Width="116"/>
+            </GridView>
+        </Grid>
+        <Grid x:Name="PlayerThreeGrid" Grid.Column="1" Grid.Row="1">
+            <Border BorderBrush="#FF8B8B8B" BorderThickness="1,1,1,0">
+                <Image Source="Assets/mtg_sideThree.jpg" Margin="0,0,0,1" Opacity="0.45"/>
+            </Border>
+            <GridView x:Name="playerThreeLifeWheel" RenderTransformOrigin="0.5,0.5" Height="138" SelectionMode="None" IsSwipeEnabled="False" IsTabStop="True" UseLayoutRounding="False" d:LayoutRounding="Auto" BorderThickness="2" CharacterSpacing="10" BorderBrush="#FF9B9B9B" Width="128" HorizontalAlignment="Center" VerticalAlignment="Center" Loaded="LifeCounter_Loaded">
+                <GridViewItem Content="0" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="1" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="2" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="3" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="4" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="5" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="6" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="7" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="8" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="9" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="10" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="11" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="12" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="13" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="14" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="15" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="16" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="17" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="18" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="19" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="20" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="21" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="22" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="23" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="24" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="25" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="26" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="27" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="28" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="29" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="30" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="31" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="32" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="33" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="34" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="35" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="36" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="37" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="38" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="39" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="40" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="41" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="42" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="43" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="44" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="45" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="46" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="47" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="48" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="49" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="50" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="51" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="52" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="53" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="54" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="55" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="56" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="57" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="58" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="59" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="60" FontSize="100" Height="134" Width="116"/>
+            </GridView>
+        </Grid>
+        <Grid x:Name="PlayerFourGrid" Grid.Column="1">
+            <Border BorderBrush="#FF8B8B8B" BorderThickness="1,0,1,1">
+                <Image RenderTransformOrigin="0.5,0.5" Source="Assets/mtg_sideFour.jpg" Opacity="0.45">
+                    <Image.RenderTransform>
+                        <CompositeTransform Rotation="-180"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <GridView x:Name="playerFourLifeWheel" RenderTransformOrigin="0.5,0.5" Height="138" SelectionMode="None" IsSwipeEnabled="False" IsTabStop="True" UseLayoutRounding="False" d:LayoutRounding="Auto" BorderThickness="2" CharacterSpacing="10" BorderBrush="#FF9B9B9B" Width="128" HorizontalAlignment="Center" VerticalAlignment="Center" Loaded="LifeCounter_Loaded">
+                <GridView.RenderTransform>
+                    <CompositeTransform Rotation="-180"/>
+                </GridView.RenderTransform>
+                <GridViewItem Content="0" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="1" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="2" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="3" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="4" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="5" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="6" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="7" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="8" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="9" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="10" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="11" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="12" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="13" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="14" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="15" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="16" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="17" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="18" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="19" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="20" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="21" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="22" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="23" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="24" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="25" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="26" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="27" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="28" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="29" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="30" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="31" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="32" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="33" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="34" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="35" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="36" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="37" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="38" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="39" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="40" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="41" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="42" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="43" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="44" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="45" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="46" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="47" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="48" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="49" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="50" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="51" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="52" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="53" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="54" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="55" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="56" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="57" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="58" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="59" FontSize="100" Height="134" Width="116"/>
+                <GridViewItem Content="60" FontSize="100" Height="134" Width="116"/>
+            </GridView>
+        </Grid>
+
+        <VisualStateManager.VisualStateGroups>
+
+            <!-- Visual states reflect the application's view state -->
+            <VisualStateGroup x:Name="ApplicationViewStates">
+                <VisualState x:Name="FullScreenLandscape"/>
+                <VisualState x:Name="Filled"/>
+
+                <!-- The entire page respects the narrower 100-pixel margin convention for portrait -->
+                <VisualState x:Name="FullScreenPortrait">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="backButton" Storyboard.TargetProperty="Style">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PortraitBackButtonStyle}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+
+                <!-- The back button and title have different styles when snapped -->
+                <VisualState x:Name="Snapped">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="backButton" Storyboard.TargetProperty="Style">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedBackButtonStyle}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</common:LayoutAwarePage>
